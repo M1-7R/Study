@@ -1,18 +1,17 @@
 #!/bin/bash
-exec 6<&0
 read -p "Input repository: " answer
-cd /home/aboba/Downloads
+cd ./Downloads
 git clone $answer
 FOUND="$(ls -tr | tail)"
-mkdir /home/aboba/test
-mv /home/aboba/Downloads/"${FOUND}"/* /home/aboba/test
-rm -rf /home/aboba/Downloads/"${FOUND}"
-chmod 700 -R /home/aboba/test
-chmod 600 -R /home/aboba/test
+mkdir ../test
+mv ./"${FOUND}"/* ../test
+rm -rf ./"${FOUND}"
+sudo chmod 600 -R ../test
 echo "Лабораторная работа 1 выполнена"
 read -p "очистить мусор? (y/n)" final
 case $final in
-y) rm -rf /home/aboba/test
+y)chmod 700 -R ../test
+rm -rf ../test
 echo "Готово!" ;;
 n) echo "Завершение" ;;
 esac
