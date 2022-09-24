@@ -1,5 +1,4 @@
 #!/bin/bash
-exec 6<&0
 read -p "Input repository: " answer
 GIT='.git'
 TAR='tar.gz'
